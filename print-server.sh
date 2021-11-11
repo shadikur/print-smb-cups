@@ -50,7 +50,7 @@ df -h
 echo  "\n${bold}Installing and configuring SAMBA${normal}"
 apt install samba -y
 mv /etc/samba/smb.conf /etc/samba/smb.conf.orig
-wget https://raw.githubusercontent.com/shadikur/print-smb-cups/main/smb.conf
+wget https://raw.githubusercontent.com/shadikur/print-smb-cups/main/smb.conf -O /etc/samba/smb.conf 
 
 systemctl restart smbd
 systemctl enable smbd
@@ -58,6 +58,6 @@ systemctl enable smbd
 echo  "\n${bold}Installing and configuring CUPS${normal}"
 apt install cups -y
 mv /etc/cups/cupsd.conf /etc/cups/cupsd.conf.orig
-wget https://raw.githubusercontent.com/shadikur/print-smb-cups/main/cupsd.conf
+wget https://raw.githubusercontent.com/shadikur/print-smb-cups/main/cupsd.conf -O /etc/cups/cupsd.conf
 systemctl restart cups
 systemctl enable cups
